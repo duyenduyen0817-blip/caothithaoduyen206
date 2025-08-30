@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thảo Duyên — Portfolio</title>
+  <meta name="description" content="Trang cá nhân của Thảo Duyên — thiết kế giao diện, nội dung sáng tạo và nhiếp ảnh." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0e0f13; --card:#161823; --soft:#1e2130; --text:#e8ecf1; --muted:#9aa4b2;
+      --brand:#6ee7f9; --brand2:#a78bfa; --accent:#34d399;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 80% -10%, #1c2340 0%, transparent 55%), var(--bg); color:var(--text); font-family:"Be Vietnam Pro",system-ui,-apple-system,Segoe UI,Roboto; line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:14px}
+    /* layout */
+    .container{width:min(1100px,92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:100;background:rgba(14,15,19,.6);backdrop-filter:blur(8px);border-bottom:1px solid #2a2d3b}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:800;letter-spacing:.4px;font-size:20px;background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav a{padding:10px 12px;border-radius:10px;color:var(--muted)}
+    .nav a:hover{background:#202435;color:var(--text)}
+    .cta{background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#0c0e13; padding:10px 14px;border-radius:12px;font-weight:700}
+    /* hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:60px 0}
+    .hero-card{background:linear-gradient(180deg,rgba(110,231,249,.08),rgba(167,139,250,.06)),var(--card);border:1px solid #2a2d3b;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid #2a2d3b;border-radius:999px;color:var(--muted);font-size:12px}
+    h1{margin:14px 0 8px;font-size:42px;line-height:1.15}
+    .lead{color:var(--muted);max-width:60ch}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .stat{background:var(--soft);border:1px solid #2a2d3b;padding:16px;border-radius:14px;text-align:center}
+    .stat b{font-size:22px;display:block}
+    /* section */
+    section{padding:40px 0}
+    .sec-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .sec-title h2{margin:0;font-size:26px}
+    .grid{display:grid;gap:18px}
+    .cols-3{grid-template-columns:repeat(3,1fr)}
+    .cols-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--card);border:1px solid #2a2d3b;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .muted{color:var(--muted)}
+    /* timeline/skills */
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:#202435;border:1px solid #2a2d3b;margin:4px 6px 0 0;font-size:12px}
+    /* gallery */
+    .gallery img{aspect-ratio:16/10;object-fit:cover}
+    /* testimonials */
+    .quote{font-style:italic}
+    /* contact */
+    form{display:grid;gap:12px}
+    input,textarea{background:#0f121b;border:1px solid #2a2d3b;color:var(--text);padding:12px 14px;border-radius:12px;font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    button{background:linear-gradient(90deg,var(--brand),var(--accent));color:#0b0f14;border:0;padding:12px 16px;border-radius:12px;font-weight:800;cursor:pointer}
+    button:hover{filter:brightness(1.05)}
+    /* footer */
+    footer{padding:26px 0;border-top:1px solid #2a2d3b;color:var(--muted);text-align:center}
+    /* responsive */
+    @media (max-width:920px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media (max-width:720px){
+      .cols-3{grid-template-columns:1fr}
+      .cols-2{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+    /* decor */
+    .blob{position:absolute;inset:auto -80px -80px auto;width:220px;height:220px;border-radius:50%;filter:blur(40px);
+      background:radial-gradient(circle at 30% 30%, rgba(110,231,249,.25), transparent 60%), 
+                  radial-gradient(circle at 70% 70%, rgba(167,139,250,.22), transparent 60%)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Thảo Duyên</a>
+      <nav>
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#works">Bộ sưu tập</a>
+        <a href="#testimonials">Cảm nhận</a>
+        <a class="cta" href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="badge">✨ Sáng tạo mỗi ngày • Thiết kế giao diện & nội dung</span>
+        <h1>Xin chào, mình là <span style="color:var(--brand)">Thảo Duyên</span>.</h1>
+        <p class="lead">
+          Mình yêu cái đẹp đơn giản, tinh tế và hữu dụng. Mục tiêu của mình là
+          biến ý tưởng thành trải nghiệm số mượt mà — từ giao diện, nội dung đến hình ảnh.
+        </p>
+        <div class="stats">
+          <div class="stat"><b>50+</b><span class="muted">Dự án cá nhân</span></div>
+          <div class="stat"><b>15</b><span class="muted">Khách hàng hài lòng</span></div>
+          <div class="stat"><b>5 năm</b><span class="muted">Làm sáng tạo</span></div>
+        </div>
+      </div>
+      <div class="hero-card" style="position:relative;overflow:hidden">
+        <div class="blob" aria-hidden="true"></div>
+        <img alt="Ảnh đại diện tối giản" src="data:image/svg+xml;utf8,
+          <svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'>
+            <defs>
+              <linearGradient id='g' x1='0' x2='1'>
+                <stop stop-color='%236ee7f9'/>
+                <stop offset='1' stop-color='%23a78bfa'/>
+              </linearGradient>
+            </defs>
+            <rect width='100%%' height='100%%' fill='%2312161f'/>
+            <circle cx='400' cy='300' r='170' fill='url(%23g)' opacity='.15'/>
+            <text x='50%%' y='53%%' fill='%23e8ecf1' font-size='44' text-anchor='middle' font-family='Verdana'>Thảo Duyên</text>
+          </svg>"/>
+        <p class="muted" style="margin-top:14px">
+          “Làm ít, hiệu quả nhiều” — triết lý giúp mình tập trung vào giá trị cốt lõi.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sec-title">
+        <h2>Về mình</h2>
+        <span class="muted">Ngắn gọn & rõ ràng</span>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <p>
+            Mình xuất phát từ đam mê viết lách và nhiếp ảnh, sau đó chuyển sang
+            thiết kế giao diện và xây dựng thương hiệu cá nhân cho các cửa hàng nhỏ,
+            lớp học online và dự án cộng đồng. Mình chú trọng cảm xúc, tính dễ dùng
+            và khả năng duy trì lâu dài.
+          </p>
+          <div>
+            <span class="chip">UI/UX cơ bản</span>
+            <span class="chip">Copywriting</span>
+            <span class="chip">Nhiếp ảnh sản phẩm</span>
+            <span class="chip">Brand mini</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Nguyên tắc làm việc</h3>
+          <ul>
+            <li>Ưu tiên đơn giản, thống nhất và dễ mở rộng.</li>
+            <li>Luôn thử nghiệm nhỏ trước khi triển khai lớn.</li>
+            <li>Giao tiếp rõ ràng, cập nhật tiến độ hằng tuần.</li>
+          </ul>
+          <p class="muted">Công cụ: VS (2013/2022), VS Code, Figma, Lightroom.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="sec-title">
+        <h2>Dịch vụ & Kỹ năng</h2>
+        <a class="muted" href="#contact">Đặt lịch tư vấn →</a>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3 style="margin-top:0">Thiết kế giao diện nhẹ</h3>
+          <p class="muted">Trang giới thiệu, landing nhỏ, tối ưu tốc độ, dễ bảo trì.</p>
+          <ul>
+            <li>Bố cục rõ ràng, responsive</li>
+            <li>Màu sắc tối giản, dễ đọc</li>
+            <li>Chuẩn SEO cơ bản</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Nội dung & hình ảnh</h3>
+          <p class="muted">Viết nội dung ngắn gọn, chụp ảnh sản phẩm phong cách tự nhiên.</p>
+          <ul>
+            <li>Tiêu đề thu hút, CTA rõ</li>
+            <li>Ảnh tone ấm, sạch</li>
+            <li>Quy trình chụp nhanh gọn</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Tư vấn thương hiệu mini</h3>
+          <p class="muted">Bộ nhận diện cơ bản cho shop nhỏ và lớp học online.</p>
+          <ul>
+            <li>Màu chủ đạo & moodboard</li>
+            <li>Logo/wordmark đơn giản</li>
+            <li>Template bài đăng</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="sec-title">
+        <h2>Bộ sưu tập</h2>
+        <span class="muted">Một vài dự án tiêu biểu</span>
+      </div>
+      <div class="grid cols-3 gallery">
+        <div class="card"><img alt="Landing tối giản" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%%' height='100%%' fill='%23161a26'/><text x='50%%' y='52%%' fill='%239aa4b2' font-size='26' text-anchor='middle'>Landing: Lớp học Online</text></svg>"><p class="muted" style="margin-top:10px">Landing cho lớp học — tỉ lệ chuyển đổi +32%.</p></div>
+        <div class="card"><img alt="Bộ ảnh sản phẩm" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%%' height='100%%' fill='%23161a26'/><text x='50%%' y='52%%' fill='%239aa4b2' font-size='26' text-anchor='middle'>Bộ ảnh: Trà thảo mộc</text></svg>"><p class="muted" style="margin-top:10px">Chụp ảnh & chỉnh màu sản phẩm trà thảo mộc.</p></div>
+        <div class="card"><img alt="Template thương hiệu mini" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%%' height='100%%' fill='%23161a26'/><text x='50%%' y='52%%' fill='%239aa4b2' font-size='26' text-anchor='middle'>Brand mini: Tiệm bánh</text></svg>"><p class="muted" style="margin-top:10px">Bộ màu, logo chữ và mẫu bài đăng cho tiệm bánh.</p></div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="sec-title">
+        <h2>Cảm nhận</h2>
+        <span class="muted">Một vài lời dễ thương</span>
+      </div>
+      <div class="grid cols-3">
+        <div class="card"><p class="quote">“Duyên làm nhanh, gọn, dễ trao đổi. Landing chạy ads rất ổn.”</p><p class="muted">— Minh, Lớp học tiếng Anh</p></div>
+        <div class="card"><p class="quote">“Ảnh sản phẩm đẹp, tự nhiên. Bài viết súc tích, đúng khách hàng.”</p><p class="muted">— Hạnh, Trà thảo mộc</p></div>
+        <div class="card"><p class="quote">“Set brand mini hợp lý cho shop nhỏ, tiết kiệm thời gian lắm.”</p><p class="muted">— Vy, Tiệm bánh</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec-title">
+        <h2>Liên hệ</h2>
+        <span class="muted">Trả lời trong 24 giờ</span>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Mình sẽ liên hệ sớm.');">
+            <input required type="text" name="name" placeholder="Tên của bạn" />
+            <input required type="email" name="email" placeholder="Email" />
+            <textarea name="message" placeholder="Bạn cần mình hỗ trợ gì?"></textarea>
+            <button type="submit">Gửi lời nhắn</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Thông tin</h3>
+          <p class="muted">
+            Email: <a href="mailto:duyenduyen0817@gmail.com">duyenduyen0817@gmail.com</a><br>
+            Instagram: <a href="#">duyn2102</a><br>
+            Địa điểm: 382/27 Tân Kỳ Tân Quý, Quận Tân Phú, TP. Hồ Chí Minh.
+          </p>
+          <p>Rất vui nếu được đồng hành cùng bạn trong dự án tiếp theo!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Thảo Duyên • Tối giản & tinh tế</div>
+  </footer>
+
+  <script>
+    // năm hiện tại + scroll mượt nhẹ
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
